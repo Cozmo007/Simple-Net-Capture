@@ -13,7 +13,7 @@ c = PacketFu::Capture.new(:iface => interface, :promisc => true, :start => true,
 loop do
 	c.stream.each do |packet|
 		pa = PacketFu::Packet.parse(packet)
-		puts ">> Source IP -> #{pa.ip_saddr} Destination -> #{pa.ip_daddr} -> type #{pa.proto.last}"
+		puts ">> Source IP -> #{pa.ip_saddr} Destination -> #{pa.ip_daddr} #{pa.proto.last}"
 
 	end
 end
