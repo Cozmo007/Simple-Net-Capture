@@ -8,11 +8,11 @@ when nil
 	puts "Type interface name!"
 	exit
 end
-c = PacketFu::Capture.new(:iface => interface, :start => true, :filter => "ip")
+c = PacketFu::Capture.new(:iface => interface, :promisc => true, :start => true, :filter => "ip")
 loop do
 	c.stream.each do |packet|
 		pa = PacketFu::Packet.parse(packet)
-		puts "Source IP -> #{pa.ip_saddr} Destination -> #{pa.ip_daddr}"
+		puts "Source IP -> #{pa.ip_saddr} Destination -> #{pa.ip_daddr} TYPE -> #{pa.proto.last}"
 
 	end
 end
