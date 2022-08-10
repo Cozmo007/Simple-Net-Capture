@@ -6,6 +6,12 @@
 
 <pre>gem install packetfu</pre>
 
+<h2>Instalaçao ArchLinux</h2>
+
+<pre>pacman -S libpcap</pre>
+
+<pre>gem install packetfu</pre>
+
 <h2>Uso:</h2>
 
 <pre>ruby sniffer.rb INTERFACE</pre>
