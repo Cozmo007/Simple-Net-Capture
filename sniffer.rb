@@ -8,6 +8,7 @@ when nil
 	puts "Type interface name!"
 	exit
 end
+puts "[+] Started on '#{ARGV[0]}' "
 c = PacketFu::Capture.new(:iface => interface, :promisc => true, :start => true, :filter => "ip")
 loop do
 	c.stream.each do |packet|
